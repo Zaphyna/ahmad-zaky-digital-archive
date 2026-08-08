@@ -23,7 +23,7 @@ cp.execFileSync('tar', ['-xzf', archive, '--strip-components=1'], { stdio: 'inhe
 
 fs.writeFileSync(
   path.join(process.cwd(), 'src/lib/db.ts'),
-  `import { neon } from '@neondatabase/serverless';\n\ntype Row = Record<string, any>;\ntype DatabaseClient = {\n  (strings: TemplateStringsArray, ...values: any[]): Promise<Row[]>;\n  query(query: string, params?: any[]): Promise<Row[]>;\n};\n\nlet client: ReturnType<typeof neon> | null = null;\nlet typedClient: DatabaseClient | null = null;\n\nexport function db(): DatabaseClient | null {\n  if (!process.env.DATABASE_URL) return null;\n  if (!client) client = neon(process.env.DATABASE_URL);\n  if (!typedClient) typedClient = client as unknown as DatabaseClient;\n  return typedClient;\n}\n`
+  `import { neon } from '@neondatabase/serverless';\n\ntype Row = Record<string, any>;\ntype DatabaseClient = {\n  (strings: TemplateStringsArray, ...values: any[]): Promise<Row[]>;\n  query(query: string, params?: any[], options?: any): Promise<Row[]>;\n};\n\nlet client: ReturnType<typeof neon> | null = null;\nlet typedClient: DatabaseClient | null = null;\n\nexport function db(): DatabaseClient | null {\n  if (!process.env.DATABASE_URL) return null;\n  if (!client) client = neon(process.env.DATABASE_URL);\n  if (!typedClient) typedClient = client as unknown as DatabaseClient;\n  return typedClient;\n}\n`
 );
 
 console.log('AZB final source extracted and database typings normalized');
