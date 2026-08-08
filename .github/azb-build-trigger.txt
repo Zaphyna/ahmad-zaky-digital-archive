@@ -1,1 +1,1 @@
-AZB build diagnostic trigger 2
+AZB build diagnostic trigger 3
