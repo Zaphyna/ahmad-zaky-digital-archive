@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';import {clearSession} from '@/lib/auth';export async function POST(r:Request){await clearSession();return NextResponse.redirect(new URL('/admin/login',r.url),303)}
