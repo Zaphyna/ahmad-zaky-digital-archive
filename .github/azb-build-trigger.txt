@@ -1,0 +1,1 @@
+AZB build diagnostic trigger
