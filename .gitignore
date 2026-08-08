@@ -1,0 +1,8 @@
+# Rebuilt from the user's original portfolio ZIP
+# Generated local/deployment files
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+azb-user-source.tar.gz

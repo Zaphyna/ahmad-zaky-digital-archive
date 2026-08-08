@@ -1,6 +1,8 @@
-name: AZB Build Check
+name: Canonical ZIP Build Check
 
 on:
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 jobs:

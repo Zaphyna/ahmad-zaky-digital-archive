@@ -1,1 +1,0 @@
-import './globals.css';export const metadata={title:'Ahmad Zaky Baramij — Personal Digital Archive',description:'Professional portfolio, digital library, poetry and photography archive of Ahmad Zaky Baramij.'};export default function Layout({children}:{children:React.ReactNode}){return <html lang="id"><body>{children}</body></html>}
